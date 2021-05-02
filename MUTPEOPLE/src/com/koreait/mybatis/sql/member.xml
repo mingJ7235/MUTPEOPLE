@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>      
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+   <select id="checkId" parameterType="string" resultType="_int">
+      SELECT COUNT(*) FROM TBL_STFORU_MEMBER WHERE MEMBERID = #{memberId}
+   </select>
+   
+   <select id="checkPhone" parameterType="string" resultType="_int">
+      SELECT COUNT(*) FROM TBL_STFORU_MEMBER WHERE MEMBERPHONE = #{memberPhone}
+   </select>
+   
+   <insert id="join" parameterType="memberVO">
+      INSERT INTO TBL_STFORU_MEMBER 
+      VALUES(
+         #{memberId}, #{memberName}, #{memberEmail}, #{memberPw}, #{memberPhone},
+         #{memberGender}, #{memberZipcode}, #{memberAddress}, #{memberAddressDetail}
+      )
+   </insert>
+   
+   <!-- dao에서 가져오는 매개변수를 여기에 써야함 -->
+   <select id="login" parameterType="memberVO" resultType="_int">
+      SELECT COUNT(*) FROM TBL_STFORU_MEMBER WHERE MEMBERID = #{id} AND MEMBERPW = #{pw}
+   </select>
+   
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

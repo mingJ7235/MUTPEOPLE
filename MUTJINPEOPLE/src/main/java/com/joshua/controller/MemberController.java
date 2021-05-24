@@ -32,7 +32,9 @@ public class MemberController {
 	@PostMapping("/join")
 	public String join (MemberVO member, RedirectAttributes rttr) {
 		
-		return "redirect:/member/home";
+		service.join(member);
+		rttr.addFlashAttribute("sessionID", member.getMemberId());
+		return "redirect:/home";
 	}
 	
 	

@@ -29,11 +29,23 @@ public class MemberController {
 		
 	}
 	
+	
 	@PostMapping("/join")
 	public String join (MemberVO member, RedirectAttributes rttr) {
 		
 		service.join(member);
 		rttr.addFlashAttribute("sessionID", member.getMemberId());
+		return "redirect:/home";
+	}
+	
+	@GetMapping("/login")
+	public void login () {
+		
+	}
+	
+	@PostMapping("/login")
+	public String login(String memberId, String memberPw) {
+		
 		return "redirect:/home";
 	}
 	

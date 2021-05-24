@@ -46,7 +46,7 @@ public class MemberController {
 	@PostMapping("/login")
 	public String login(String memberId, String memberPw) {
 		
-		return "redirect:/home";
+		return "redirect:/member/home";
 	}
 	
 	

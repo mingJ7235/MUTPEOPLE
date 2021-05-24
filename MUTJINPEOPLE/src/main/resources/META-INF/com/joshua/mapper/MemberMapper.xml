@@ -2,7 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.joshua.mapper.MemberMapper">
 	<!-- 회원가입 -->
+	<!-- 
+	String memberId;
+	String memberPw;
+	String memberName;
+	int memberAge;
+	String memberEmail;
+	String memberZipcode;
+	String memberLocation;
+	String memberLocationDetail;
+	String memberCanOne;
+	String memberCanTwo;
+	String memberCanThree;
+	String memberWantOne;
+	String memberWantTwo;
+	String memberWantThree;
+	 -->
+	<insert id="join">
+		INSERT INTO TBL_LIGHTMEMBER (MEMBERID, MEMBERPW, MEMBERNAME, MEMBERAGE, MEMBEREMAIL, MEMBERZIPCODE, MEMBERLOCATION, MEMBERLOCATIONDETAIL, MEMBERCANONE, MEMBERCANTWO, MEMBERCANTHREE, MEMBERWANTONE, MEMBERWANTTWO, MEMBERWANTTHREE) 
+		VALUES (#{memberId}, #{memberPw}, #{memberName}, #{memberAge}, #{memberEmail}, #{memberZipcode}, 
+		#{memberLocation}, #{memberLocationDetail}, #{memberCanOne}, #{memberCanTwo}, #{memberCanThree}, 
+		#{memberWantOne}, #{memberWantTwo}, #{memberWantThree})
+	</insert>
 	
 	
 	<!-- 로그인 (아이디 중복체크검사) -->
+	
+	<select id="checkId">
+		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId}
+	</select>
 </mapper>

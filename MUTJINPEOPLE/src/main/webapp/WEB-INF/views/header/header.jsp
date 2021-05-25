@@ -28,6 +28,12 @@
 			
 		}
 		
+		@media(max-width : 480px)  {
+			.top_header {
+				display: none;
+			}
+		}
+		
 		
 		</style>
 		

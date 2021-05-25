@@ -54,10 +54,10 @@ public class MemberController {
 		
 	}
 	
-	@PostMapping("/findId")
-	public String findId () {
-		
-	}
+//	@PostMapping("/findId")
+//	public String findId () {
+//		
+//	}
 	
 	
 	

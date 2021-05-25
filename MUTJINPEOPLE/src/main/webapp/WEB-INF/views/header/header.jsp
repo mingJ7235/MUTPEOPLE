@@ -28,9 +28,16 @@
 			
 		}
 		
+		.top_header_mobile {
+			display : none;
+		}
+		
 		@media(max-width : 480px)  {
 			.top_header {
 				display: none;
+			}
+			.top_header_mobile {
+				
 			}
 		}
 		
@@ -40,9 +47,14 @@
 		
 	</head>
 	<body class="is-preload">
-
+		<!-- web페이지일 경우 헤더 -->
 		<div class="top_header">
 					
+		</div>
+		
+		<!-- 모바일 경우 헤더 -->
+		<div class = "top_header_mobile">
+		
 		</div>
 
 	</body>

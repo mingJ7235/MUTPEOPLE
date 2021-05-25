@@ -114,7 +114,7 @@
 			<header id="header">
 				<nav>
 					<ul>
-						<li><a href="">Menu</a></li>
+						<li><a href="#menu">Menu</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -183,7 +183,13 @@
          								<c:forEach var="board" items="${list}">
          									<tr class="tBody">
 	                                          <td class="bno">${board.bno}</td> 
-	                                          <td class="title"><a href="/board/get${pageMaker.cri.getListLink()}&bno=${board.bno}">${board.title}</a></td>
+	                                          <td class="title">
+	                                          	<a href="/board/get${pageMaker.cri.getListLink()}&bno=${board.bno}">${board.title}
+	                                          		<span style = "font-size: 0.5rem">
+	                                          			&nbsp;[${board.replyCnt}]
+	                                          		</span>		
+	                                          	</a>
+	                                          </td>
 	                                          <td class="writer">${board.writer}</td>
 	                                          <td class="regDate">${board.regDate}</td>
 	                                          <td class="updateDate">${board.updateDate}</td>

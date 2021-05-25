@@ -31,4 +31,8 @@
 	<select id="checkId">
 		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId}
 	</select>
+	
+	<select id="">
+	
+	</select>
 </mapper>

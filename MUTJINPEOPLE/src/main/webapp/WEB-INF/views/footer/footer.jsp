@@ -9,7 +9,7 @@
 -->
 <html>
 	<head>
-		<title>U</title>
+		<title>Untitled</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -21,11 +21,6 @@
 		
 		}
 		
-		.checkPTag {
-			display : none;
-			
-		}
-		
 		
 		</style>
 		
@@ -34,18 +29,15 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-		<div>
-			<c:import url="../header/header.jsp"></c:import> 
-			<!-- Header -->
-			<!-- <header id="header">
+			<header id="header">
 				<nav>
 					<ul>
-						<li><a href="#menu">Menu</a></li>
+						<li><a href="">Menu</a></li>
 					</ul>
 				</nav>
 			</header>
 
-		Menu
+		<!-- Menu -->
 			<nav id="menu">
 				<h2>Menu</h2>
 				<ul class="links">
@@ -59,14 +51,30 @@
 					<li><a href="" class="button fit primary">Get Started</a></li>
 					<li><a href="" class="button fit">Log In</a></li>
 				</ul>
-			</nav> -->
-			
-			
+			</nav>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Intro -->
-					
+					<section id="intro" class="wrapper featured style1">
+						<div class="inner">
+							<span class="image"><img src="/resources/images/pic01.jpg" alt="" /></span>
+							<div class="content">
+								<header>
+									<h1>Reflex</h1>
+									<p>Lorem ipsum dolor sit magna consectetur<br />
+									adipiscing elit. Duis dapibus rutrum facilisis.<br />
+									Class aptent taciti sociosqu torquent.</p>
+								</header>
+								<footer>
+									<ul class="actions">
+										<li><a href="#" class="button big">Get Started</a></li>
+									</ul>
+								</footer>
+							</div>
+						</div>
+					</section>
 
 				<!-- One -->
 					<section class="wrapper style2 special">
@@ -74,29 +82,31 @@
 
                   <!-- Elements -->
                      <header class="major">
-                        <h1>Login</h1>
-                        <p>로그인</p>
-                    	 </header>
+                        <h1>Board</h1>
+                        <p>게시판 등록</p>
+                     </header>
+                              <h3><a href="/board/list${cri.getListLink()}" class="button small">목록 보기</a></h3>
                               <div class="content">
                               	<div class="form">
-                              		<form id="loginForm" method="post" action="/member/login">
+                              		<form id="regForm" method="post" action="board/register">
                               			<div class="fields">
                               				<div class="field">
-                              					<h3>ID</h3>
+                              					<h3>Title.</h3>
                               					<input name="title" type="text" placeholder="title"/>
-                              					<p class = "checkPTag"></p>
                               				</div>
                               				<div class="field">
-                              					<h3>PW</h3>
+                              					<h3>Content</h3>
+                              					<textarea rows="6" name="content" placeholder="content"></textarea>
+                              				</div>
+                              				<div class="field">
+                              					<h3>Writer</h3>
                               					<input name="writer" type="text" placeholder="writer"/>
                               				</div>    
                               			</div>
                               			
                               			<ul class="actions special">
                               				<li>
-                              					<input type="submit" class="button loginBtn" value="로그인">
-                              					<a href="/member/join" class="button joinBtn">회원가입</a>
-                              					<a href="/member/findId" class="button findBtn">아이디/비밀번호 찾기</a>
+                              					<input type="submit" class="button" value="등록">
                               				</li>
                               			</ul>
                               		</form>
@@ -104,7 +114,6 @@
                               </div>
                         </div>
 					</section>
-				</div>
 
 				
 
@@ -142,7 +151,6 @@
 					</section>
 
 			</div>
-		
 
 		<!-- Scripts -->
 			<script src="/resources/assets/js/jquery.min.js"></script>

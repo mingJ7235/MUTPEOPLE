@@ -30,9 +30,9 @@
    </sql>
    
    <select id="getListWithPaging" resultType="com.joshua.domain.BoardVO">
-  	SELECT BNO, TITLE, CONTENT, WRITER, REGDATE, UPDATEDATE 
+  	SELECT BNO, TITLE, CONTENT, WRITER, REGDATE, UPDATEDATE, REPLYCNT
 		FROM 
-			(SELECT /*+ INDEX_DESC(TBL_LIGHTBOARD PK_LIGHTBOARD) */ ROWNUM RN, BNO, TITLE, CONTENT, WRITER, REGDATE, UPDATEDATE
+			(SELECT /*+ INDEX_DESC(TBL_LIGHTBOARD PK_LIGHTBOARD) */ ROWNUM RN, BNO, TITLE, CONTENT, WRITER, REGDATE, UPDATEDATE, REPLYCNT 
 			FROM TBL_LIGHTBOARD 
 			WHERE 
 			<include refid="criteria"/> 
@@ -76,6 +76,12 @@
    <update id="update">
    	UPDATE TBL_LIGHTBOARD 
    	SET TITLE = #{title}, CONTENT = #{content}, WRITER = #{writer}, UPDATEDATE = SYSDATE 
+   	WHERE BNO = #{bno}
+   </update>
+   
+   <update id="updateReplyCnt">
+   	UPDATE TBL_LIGHTBOARD 
+   	SET REPLYCNT = REPLYCNT + #{amount} 
    	WHERE BNO = #{bno}
    </update>
    

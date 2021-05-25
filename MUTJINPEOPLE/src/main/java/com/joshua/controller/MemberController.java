@@ -49,5 +49,16 @@ public class MemberController {
 		return "redirect:/member/home";
 	}
 	
+	@GetMapping("/findId")
+	public void findId () {
+		
+	}
+	
+	@PostMapping("/findId")
+	public String findId () {
+		
+	}
+	
+	
 	
 }

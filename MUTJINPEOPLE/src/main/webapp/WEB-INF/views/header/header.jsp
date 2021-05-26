@@ -48,7 +48,8 @@
 		
 		.header_menus {
 			display : flex;
-			justify-content: center; 
+			justify-content: space-evenly; 
+			width : 50%;
 			
 		}
 		
@@ -81,8 +82,15 @@
 				<a href="/member/home"><img class = "logoImg" src="https://media.discordapp.net/attachments/847093134664138792/847094043636137994/mutMainLogo.png"></a>
 			</div>
 			<div class="header_menus">
-			
-			
+				<div class="header_menu">
+					<a>지역별 멋쟁이들</a>
+				</div>
+				<div class="header_menu">
+					<a>이런 멋쟁이 있나요?</a>
+				</div>
+				<div class="header_menu">
+					<a>멋진 수다쟁이들</a>
+				</div>
 			</div>
 		</div>
 		

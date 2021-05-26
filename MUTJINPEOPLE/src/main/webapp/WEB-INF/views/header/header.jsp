@@ -24,12 +24,39 @@
 		.top_header {
 			width : 100%;
 			height: 130px;
-			border-bottom: 1px solid #565656;			
+			border-bottom: 1px solid #565656;		
+			display : flex;
+			justify-content: flex-start; 
+			
+		}
+		.header_logo {
+			margin-left : 3%;
+			padding-top: 10px; 
 			
 		}
 		
+		.logoImg {
+			width : auto;
+			height : 100px;
+		}
+		
+		
 		.top_header_mobile {
 			display : none;
+		}
+		
+		
+		.header_menus {
+			display : flex;
+			justify-content: center; 
+			
+		}
+		
+		@media(max-width : 918px) {
+			.header_logo {
+				display : none;
+			}
+				
 		}
 		
 		@media(max-width : 480px)  {
@@ -42,6 +69,7 @@
 		}
 		
 		
+		
 		</style>
 		
 		
@@ -49,7 +77,13 @@
 	<body class="is-preload">
 		<!-- web페이지일 경우 헤더 -->
 		<div class="top_header">
-					
+			<div class="header_logo">
+				<a href="/member/home"><img class = "logoImg" src="https://media.discordapp.net/attachments/847093134664138792/847094043636137994/mutMainLogo.png"></a>
+			</div>
+			<div class="header_menus">
+			
+			
+			</div>
 		</div>
 		
 		<!-- 모바일 경우 헤더 -->

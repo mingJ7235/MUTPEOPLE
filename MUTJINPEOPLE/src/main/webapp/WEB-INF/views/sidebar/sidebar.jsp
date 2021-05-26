@@ -21,7 +21,7 @@
 		
 		}
 		
-		@media(max-width : 1300px) {
+		@media(max-width : 480px) {
 			#header {
 				display : none;
 			}

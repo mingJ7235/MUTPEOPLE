@@ -26,13 +26,14 @@
 	</insert>
 	
 	
-	<!-- 로그인 (아이디 중복체크검사) -->
+	<!-- 가입할때 (아이디 중복체크검사) -->
 	
-	<select id="checkId">
+	<select id="checkId" resultType="_int">
 		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId}
 	</select>
 	
-	<select id="">
-	
+	<!-- 로그인 -->
+	<select id="login" resultType="_int">
+		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
 	</select>
 </mapper>

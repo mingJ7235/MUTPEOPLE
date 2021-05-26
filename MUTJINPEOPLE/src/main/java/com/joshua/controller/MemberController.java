@@ -34,8 +34,7 @@ public class MemberController {
 	public String join (MemberVO member, RedirectAttributes rttr) {
 		
 		service.join(member);
-		rttr.addFlashAttribute("sessionID", member.getMemberId());
-		return "redirect:/home";
+		return "redirect:/member/login";
 	}
 	
 	@GetMapping("/login")
@@ -44,9 +43,23 @@ public class MemberController {
 	}
 	
 	@PostMapping("/login")
-	public String login(String memberId, String memberPw) {
+	public String login(String memberId, String memberPw, RedirectAttributes rttr) {
 		
-		return "redirect:/member/home";
+		String result = "";
+		//로그인 성공
+		if (service.login(memberId, memberPw) > 0 ) {
+			log.info("login 성공");
+			rttr.addFlashAttribute("sessionID", memberId);
+			result = "redirect:/member/home";
+		} 
+		//로그인 실패 
+		else {
+			log.info("login 실패");
+			result = "redirect:/member/login";
+		}
+		
+		return result ;
+		
 	}
 	
 	@GetMapping("/findId")

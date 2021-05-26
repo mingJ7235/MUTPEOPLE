@@ -62,12 +62,12 @@
                               			<div class="fields">
                               				<div class="field">
                               					<h3>ID</h3>
-                              					<input name="title" type="text" placeholder="title"/>
+                              					<input name="memberId" type="text" placeholder="아이디"/>
                               					<p class = "checkPTag"></p>
                               				</div>
                               				<div class="field">
                               					<h3>PW</h3>
-                              					<input name="writer" type="text" placeholder="writer"/>
+                              					<input name="memberPw" type="password" placeholder="비밀번호"/>
                               				</div>    
                               			</div>
                               			

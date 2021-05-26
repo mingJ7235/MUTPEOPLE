@@ -50,7 +50,14 @@
 			display : flex;
 			justify-content: space-evenly; 
 			width : 50%;
+			margin-top : 70px;
 			
+		}
+		
+		.header_menu {
+			color : #5B5B5B;
+			font-weight: 2;
+			font-size : 1.2rem;
 		}
 		
 		@media(max-width : 918px) {
@@ -89,7 +96,7 @@
 					<a>이런 멋쟁이 있나요?</a>
 				</div>
 				<div class="header_menu">
-					<a>멋진 수다쟁이들</a>
+					<a href = "/board/list">멋진 수다쟁이들</a>
 				</div>
 			</div>
 		</div>

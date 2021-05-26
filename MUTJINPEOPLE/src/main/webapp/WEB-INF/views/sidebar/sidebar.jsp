@@ -45,17 +45,16 @@
 
 		<!-- Menu -->
 			<nav id="menu">
-				<h2>Menu</h2>
+				<h2>메뉴</h2>
 				<ul class="links">
-					<li><a href="/member/home">Home</a></li>
-					<li><a href="generic.html">Ipsum veroeros</a></li>
-					<li><a href="generic.html">Tempus etiam</a></li>
-					<li><a href="generic.html">Consequat dolor</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="/member/home">메인페이지</a></li>
+					<li><a href="generic.html">지역별 멋쟁이들</a></li>
+					<li><a href="generic.html">이런 멋쟁이 있나요?</a></li>
+					<li><a href="generic.html">멋진 수다쟁이들</a></li>
 				</ul>
 				<ul class="actions stacked">
-					<li><a href="" class="button fit primary">Get Started</a></li>
-					<li><a href="" class="button fit">Log In</a></li>
+					<li><a href="" class="button fit primary">회원가입</a></li>
+					<li><a href="/member/login" class="button fit">로그인</a></li>
 				</ul>
 			</nav>
 	</body>

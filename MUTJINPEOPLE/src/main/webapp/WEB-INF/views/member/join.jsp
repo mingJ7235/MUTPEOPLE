@@ -83,15 +83,16 @@ a {
 							<div class="fields" style = "margin : 0 auto;">
 								<div class="field">
 									<h3>아이디</h3>
-									<input name="memberId" type="text" placeholder="아이디" />
+									<input id = "memberId" name="memberId" type="text" placeholder="아이디" />
 								</div>
+								<p id="idText"></p>
 								<div class="field">
 									<h3>비밀번호</h3>
-									<input name="memberPw" type="password" placeholder="비밀번호" />
+									<input "name="memberPw" type="password" placeholder="비밀번호" />
 								</div>
 								<div class="field">
 									<h3>비밀번호 확인</h3>
-									<input id="memberPwCheck" name="memberPwCheck" type="password" placeholder="비밀번호확인" />
+									<input id="memberPwCheck" name="memberPwCheck" type="password" placeholder="비밀번호확인"/>
 								</div>
 								<div class="field">
 									<h3>이름</h3>
@@ -127,36 +128,20 @@ a {
 									</blockquote>
 								</div>
 								
-								<h5 style ="width: 400px;">나의 재능 (<span style ="color:red;">*</span> 최소 1개는 선택해주세요.)</h5>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px;">
-										<option value="">- 카테고리 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
+								<div class="field">
+									<h3> 재능 #1 </h3>
+									<input name="writer" type="text" placeholder="writer" />
 								</div>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px; margin-top: 10px;">
-										<option value="">- 세부분야 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
+								<div class="field">
+									<h3> 재능 #2 </h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3> 재능 #3 </h3>
+									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<br>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px;">
-										<option value="">- 카테고리 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
-								</div>
-								
+																
 								<br>
 								<h5 style ="width: 400px;">관심 분야 (<span style ="color:red;">*</span> 최소 1개는 선택해주세요.)</h5>
 								<div class="col-12">
@@ -178,15 +163,7 @@ a {
 									</select>
 								</div>
 								<br>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px;">
-										<option value="">- 카테고리 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
-								</div>
+								
 							
 							</div>
 
@@ -261,10 +238,55 @@ a {
 
 </body>
 <script>
+var arrFlag = [];
+arrFlag[0] = false;
+
+$("#memberId").blur(function() {
 	
+	let inputId = $("#memberId").val();
+	let text = $("#idText");	
+	let regExp = /^[A-Za-z0-9_]{6,20}$/;
 	
+	console.log(inputId);
 	
-	</script>
+	if(!regExp.test($(this).val())){
+		console.log("not");
+		text.css("color", "#ff6347");
+		text.text("영문,숫자 6~20자리");
+		arrFlag[0] = false;
+		return false;
+	}
+	
+	$.ajax({
+		type: "get",
+		url : "/member/checkId",
+		data:{
+			"memberId" : inputId		
+		},
+		success : function(result) {			
+			if($.trim(result) == 1){
+				resultCheckId = true;
+				text.css("color", "#3cb371");
+				text.text("사용 가능한 ID입니다");
+				arrFlag[0] = true;
+				
+			}else{
+				resultCheckId = false;
+				text.css("color", "#ff6347");
+				text.text("사용 중인 ID입니다");
+				arrFlag[0] = false;
+				
+			}				
+		},
+		error : function(a, b, c){			
+			console.log(a + b + c);
+		}	
+	});		
+});
+	
+
+	
+</script>
 </html>
 
 

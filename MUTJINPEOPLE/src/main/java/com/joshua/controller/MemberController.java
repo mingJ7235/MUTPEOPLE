@@ -1,7 +1,10 @@
 package com.joshua.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -85,6 +88,13 @@ public class MemberController {
 	
 	@GetMapping("/findId")
 	public void findId () {
+		
+	}
+	
+	@GetMapping (value = "/checkId", produces = "text/plain; charset=utf-8")
+	public ResponseEntity<String> checkId (String memberId) {
+		log.info(memberId);
+		return service.checkId(memberId) == 0 ? new ResponseEntity<String> ("1", HttpStatus.OK) : new ResponseEntity<String> ("0", HttpStatus.OK);
 		
 	}
 	

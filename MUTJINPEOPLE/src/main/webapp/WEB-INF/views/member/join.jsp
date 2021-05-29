@@ -16,11 +16,26 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="/resources/assets/css/main.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
 <style>
+body {
+	font-family: 'Nanum Brush Script', cursive !important;
+}
+
+
+
 a {
 	border-bottom: none;
 }
+
+.fields {
+	width: 80% !important;
+}
 </style>
+
+
 
 
 </head>
@@ -42,8 +57,8 @@ a {
 
 				<!-- Elements -->
 				<header class="major">
-					<h1>Board</h1>
-					<p>게시판 등록</p>
+					<h1>이제 당신도 멋진 사람</h1>
+					<p> [회원가입] </p>
 				</header>
 
 				<!-- 
@@ -62,13 +77,10 @@ a {
 						String memberWantTwo;
 						String memberWantThree;
 					                      -->
-				<h3>
-					<a href="/board/list${cri.getListLink()}" class="button small">목록보기</a>
-				</h3>
 				<div class="content">
 					<div class="form">
 						<form id="joinForm" method="post" action="/member/join">
-							<div class="fields">
+							<div class="fields" style = "margin : 0 auto;">
 								<div class="field">
 									<h3>아이디</h3>
 									<input name="memberId" type="text" placeholder="아이디" />
@@ -85,6 +97,97 @@ a {
 									<h3>이름</h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
+								<div class="field">
+									<h3>나이</h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3>이메일</h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3>우편번호</h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3>주소</h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3>상세주소</h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
+								<div class="field">
+									<h3>Sharing Talent For you</h3>
+									<blockquote>
+									당신의 재능은 무엇인가요?<br>
+									당신이 나눌수 있는 재능이 무엇이든 선택해주세요. <br>
+									또, 당신이 배우고 싶거나 관심있는 분야가 무엇인지 선택해주세요. <br>
+									(최소 1가지, 최대 3가지씩 선택이 가능합니다.)
+									</blockquote>
+								</div>
+								
+								<h5 style ="width: 400px;">나의 재능 (<span style ="color:red;">*</span> 최소 1개는 선택해주세요.)</h5>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px;">
+										<option value="">- 카테고리 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px; margin-top: 10px;">
+										<option value="">- 세부분야 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+								<br>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px;">
+										<option value="">- 카테고리 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+								
+								<br>
+								<h5 style ="width: 400px;">관심 분야 (<span style ="color:red;">*</span> 최소 1개는 선택해주세요.)</h5>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px;">
+										<option value="">- 카테고리 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px; margin-top: 10px;">
+										<option value="">- 세부분야 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+								<br>
+								<div class="col-12">
+									<select name="category" id="category" style ="width : 400px;">
+										<option value="">- 카테고리 -</option>
+										<option value="1">운동</option>
+										<option value="1">게임</option>
+										<option value="1">음악</option>
+										<option value="1">자기개발</option>
+									</select>
+								</div>
+							
 							</div>
 
 							<ul class="actions special">

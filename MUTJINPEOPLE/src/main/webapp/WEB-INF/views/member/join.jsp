@@ -84,15 +84,16 @@ a {
 								<div class="field">
 									<h3>아이디</h3>
 									<input id = "memberId" name="memberId" type="text" placeholder="아이디" />
+									<p id="idText"></p>
 								</div>
-								<p id="idText"></p>
 								<div class="field">
 									<h3>비밀번호</h3>
-									<input "name="memberPw" type="password" placeholder="비밀번호" />
+									<input id = "memberPw" name="memberPw" type="password" placeholder="비밀번호" />
 								</div>
 								<div class="field">
 									<h3>비밀번호 확인</h3>
 									<input id="memberPwCheck" name="memberPwCheck" type="password" placeholder="비밀번호확인"/>
+									<p id="pwText"></p>
 								</div>
 								<div class="field">
 									<h3>이름</h3>
@@ -282,6 +283,24 @@ $("#memberId").blur(function() {
 			console.log(a + b + c);
 		}	
 	});		
+});
+
+$("#memberPwCheck").blur(function (){
+	var pw = $("#memberPw").val();
+	var pwCheck = $(this).val();
+	var text = $("#pwText");
+	
+	if(pw == pwCheck){
+		console.log("ok");
+		text.css("color", "#3cb371");
+		text.text("비밀번호가 일치합니다");
+		arrFlag[2] = true;
+	}else{
+		console.log("not");
+		text.css("color", "#ff6347");
+		text.text("비밀번호가 다릅니다");
+		arrFlag[2] = false;
+	}
 });
 	
 

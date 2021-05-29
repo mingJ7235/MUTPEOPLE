@@ -17,6 +17,7 @@ public class MemberServiceImple implements MemberService{
 	@Override
 	public int join(MemberVO member) {
 		log.info("join .....");
+		
 		return mapper.join(member);
 	}
 	

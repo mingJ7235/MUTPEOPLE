@@ -24,8 +24,6 @@ body {
 	font-family: 'Nanum Brush Script', cursive !important;
 }
 
-
-
 a {
 	border-bottom: none;
 }
@@ -33,7 +31,18 @@ a {
 .fields {
 	width: 80% !important;
 }
+
+.checkText {
+	text-align: left;
+	margin-left : 1%;
+	font-size: 1.1rem;
+	margin-bottom: 0; 
+		
+}
+
 </style>
+
+
 
 
 
@@ -84,7 +93,7 @@ a {
 								<div class="field">
 									<h3>아이디</h3>
 									<input id = "memberId" name="memberId" type="text" placeholder="아이디" />
-									<p id="idText"></p>
+									<p id="idText" class="checkText"></p>
 								</div>
 								<div class="field">
 									<h3>비밀번호</h3>
@@ -93,7 +102,7 @@ a {
 								<div class="field">
 									<h3>비밀번호 확인</h3>
 									<input id="memberPwCheck" name="memberPwCheck" type="password" placeholder="비밀번호확인"/>
-									<p id="pwText"></p>
+									<p id="pwText" class="checkText"></p>
 								</div>
 								<div class="field">
 									<h3>이름</h3>
@@ -106,7 +115,7 @@ a {
 								<div class="field">
 									<h3>이메일</h3>
 									<input id="memberEmail" name="memberEmail" type="text" placeholder="writer" />
-									<p id="emailText"></p>
+									<p id="emailText" class="checkText"></p>
 								</div>
 								<div class="field">
 									<h3>우편번호</h3>
@@ -335,7 +344,7 @@ $("#memberEmail").blur(function(){
 				text.text ("사용가능한 이메일 입니다. ");
 				arrFlag[2] = true;
 			} else {
-				text.css("color", "ff6347");
+				text.css("color", "#ff6347");
 				text.text("사용중인 이메일입니다. ");
 				arrFlag[2] = false;
 			}

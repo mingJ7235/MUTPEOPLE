@@ -112,6 +112,8 @@ public class MemberController {
 		}else {
 			result = "0";
 		}
+		log.info(result);
+		
 		
 		return result != "" ? new ResponseEntity<String> (result, HttpStatus.OK) : new ResponseEntity<String> (HttpStatus.INTERNAL_SERVER_ERROR);
 		//return service.checkEmail(memberEmail) == 0 ? new ResponseEntity<String> ("1", HttpStatus.OK) : new

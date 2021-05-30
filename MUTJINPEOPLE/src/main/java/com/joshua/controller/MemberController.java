@@ -96,28 +96,29 @@ public class MemberController {
 	}
 	
 	@PostMapping (value = "/findId")
-	@ResponseBody
-	public String findId(@RequestBody MemberVO member, RedirectAttributes rttr) { //member객체 모든거 안보내도 매핑해서 해결하는지 테스트 
+	public String findId(String memberName, String memberEmail, RedirectAttributes rttr) { //member객체 모든거 안보내도 매핑해서 해결하는지 테스트 
 		
-		log.info("memberName : " + member.getMemberName());
-		log.info("memberEmail : " + member.getMemberEmail());
+		log.info("memberName : " + memberName);
+		log.info("memberEmail : " + memberEmail);
 
-		String memberId = member.getMemberId();
 		String result = "";
 		
-		log.info("제대로 가져오는가? " + memberId);
-		
-		rttr.addFlashAttribute("memberId", memberId);
-		
 		//이름과 이메일 주소가 DB에 있을 때, 
-		if(service.findId(member) == 1) {
-			result = "1";
+		if(service.findId(memberName, memberEmail) != "") {
+			String memberId = service.findId(memberName, memberEmail);
+			rttr.addFlashAttribute("memberId", memberId);
+			result = "redirect:/member/findIdResult";
 		}else {
 			//일치하지 않을 때 
-			result = "0";
+			result = "redirect:/member/findId";
 		}
 		
-		return result == "1" ? "redirect:/member/findIdResult" : "redirect:/member/findId";
+		return result;
+		
+	}
+	
+	@GetMapping (value="/findIdResult") 
+	public void findIdResult () {
 		
 	}
 	

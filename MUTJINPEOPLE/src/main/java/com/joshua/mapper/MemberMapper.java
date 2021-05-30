@@ -14,6 +14,5 @@ public interface MemberMapper {
 	
 	public int login (@Param("memberId") String memberId, @Param ("memberPw") String memberPw);
 	
-	public int findId (MemberVO member);
-
+	public String findId (@Param("memberName") String memberName, @Param("memberEmail") String memberEmail);
 }

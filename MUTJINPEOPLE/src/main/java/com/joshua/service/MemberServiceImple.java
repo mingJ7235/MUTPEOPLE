@@ -39,9 +39,11 @@ public class MemberServiceImple implements MemberService{
 	}
 
 	@Override
-	public int findId(MemberVO member) {
-		return mapper.findId(member);
+	public String findId(String memberName, String memberEmail) {
+		return mapper.findId(memberName, memberEmail);
 	}
+
+	
 
 	
 }

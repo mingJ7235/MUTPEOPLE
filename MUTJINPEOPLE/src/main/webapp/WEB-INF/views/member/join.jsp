@@ -42,8 +42,17 @@ a {
 
 .inputName {
 	text-align: left; 
+	margin-left: 1%;
+	margin-bottom: 1.2rem !important;
 	
-	
+}
+
+.fontColorRed {
+	color : red;
+}
+
+.inputNameSpan {
+	font-size: 0.8rem;
 }
 
 </style>
@@ -97,12 +106,12 @@ a {
 						<form id="joinForm" method="post" action="/member/join">
 							<div class="fields" style = "margin : 0 auto;">
 								<div class="field">
-									<h3 class="inputName">아이디</h3>
+									<h3 class="inputName">아이디 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input id = "memberId" name="memberId" type="text" placeholder="아이디" />
 									<p id="idText" class="checkText"></p>
 								</div>
 								<div class="field">
-									<h3 class="inputName">비밀번호</h3>
+									<h3 class="inputName">비밀번호 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input id = "memberPw" name="memberPw" type="password" placeholder="비밀번호" />
 								</div>
 								<div class="field">
@@ -111,29 +120,29 @@ a {
 									<p id="pwText" class="checkText"></p>
 								</div>
 								<div class="field">
-									<h3 class="inputName">이름</h3>
+									<h3 class="inputName">이름 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input id="memberName" name="memberName" type="text" placeholder="이름" />
 								</div>
 								<div class="field">
-									<h3 class="inputName">나이</h3>
+									<h3 class="inputName">나이 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input id="memberAge" name="memberAge" type="text" placeholder="나이" />
 								</div>
 								<div class="field">
-									<h3 class="inputName">이메일</h3>
+									<h3 class="inputName">이메일 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input id="memberEmail" name="memberEmail" type="text" placeholder="이메일주소 (ex> abc@def.com)" />
 									<p id="emailText" class="checkText"></p>
 								</div>
 								<div class="field">
 									<h3 class="inputName">우편번호</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="writer" type="text" placeholder="우편번호" />
 								</div>
 								<div class="field">
-									<h3 >주소</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<h3 class="inputName">주소</h3>
+									<input name="writer" type="text" placeholder="주소" />
 								</div>
 								<div class="field">
 									<h3 class="inputName">상세주소</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="writer" type="text" placeholder="상세주소" />
 								</div>
 								<div class="field">
 									<h3>Sharing Talent For you</h3>
@@ -146,7 +155,7 @@ a {
 								</div>
 								
 								<div class="field">
-									<h3 class="inputName"> 재능 #1 </h3>
+									<h3 class="inputName"> 재능 #1 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
@@ -161,7 +170,7 @@ a {
 																
 								<br>
 								<div class="field">
-									<h3 class="inputName"> 관심분야 #1 </h3>
+									<h3 class="inputName"> 관심분야 #1 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">

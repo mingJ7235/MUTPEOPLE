@@ -52,7 +52,7 @@ public class MemberController {
 	
 	@PostMapping("/login")
 	public String login(String memberId, String memberPw, RedirectAttributes rttr) {
-		
+		memberPw = decrypt(memberPw);
 		String result = "";
 		//로그인 성공
 		if (service.login(memberId, memberPw) > 0 ) {

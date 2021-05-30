@@ -38,5 +38,10 @@ public class MemberServiceImple implements MemberService{
 		return mapper.login(memberId, memberPw);
 	}
 
+	@Override
+	public int findId(MemberVO member) {
+		return mapper.findId(member);
+	}
+
 	
 }

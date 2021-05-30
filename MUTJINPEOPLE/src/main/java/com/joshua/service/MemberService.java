@@ -11,5 +11,7 @@ public interface MemberService {
 	public int checkEmail (String memberEmail);
 	
 	public int login (String memberId, String memberPw);
+	
+	public int findId (MemberVO member);
 
 }

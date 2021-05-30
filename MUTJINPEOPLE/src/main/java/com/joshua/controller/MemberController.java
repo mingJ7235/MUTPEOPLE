@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.joshua.domain.MemberVO;
@@ -78,7 +80,7 @@ public class MemberController {
 		return en_pw;
 	}
 		
-		//복호화
+	//복호화
 	public String decrypt(String en_pw) {
 		String de_pw = "";
 		for (int i = 0; i < en_pw.length(); i++) {
@@ -87,13 +89,42 @@ public class MemberController {
 		return de_pw;
 	}	
 	
-	
+	//아이디 찾기 페이지 이동 
 	@GetMapping("/findId")
 	public void findId () {
 		
 	}
 	
+	@PostMapping (value = "/findId")
+	@ResponseBody
+	public String findId(@RequestBody MemberVO member, RedirectAttributes rttr) { //member객체 모든거 안보내도 매핑해서 해결하는지 테스트 
+		
+		log.info("memberName : " + member.getMemberName());
+		log.info("memberEmail : " + member.getMemberEmail());
+
+		String memberId = member.getMemberId();
+		String result = "";
+		
+		log.info("제대로 가져오는가? " + memberId);
+		
+		rttr.addFlashAttribute("memberId", memberId);
+		
+		//이름과 이메일 주소가 DB에 있을 때, 
+		if(service.findId(member) == 1) {
+			result = "1";
+		}else {
+			//일치하지 않을 때 
+			result = "0";
+		}
+		
+		return result == "1" ? "redirect:/member/findIdResult" : "redirect:/member/findId";
+		
+	}
+	
+	
+	
 	@GetMapping (value = "/checkId", produces = "text/plain; charset=utf-8")
+	@ResponseBody
 	public ResponseEntity<String> checkId (String memberId) {
 		log.info(memberId);
 		return service.checkId(memberId) == 0 ? new ResponseEntity<String> ("1", HttpStatus.OK) : new ResponseEntity<String> ("0", HttpStatus.OK);
@@ -101,6 +132,7 @@ public class MemberController {
 	}
 	
 	@GetMapping (value ="/checkEmail", produces = {MediaType.TEXT_PLAIN_VALUE})
+	@ResponseBody
 	public ResponseEntity<String> checkEmail (String memberEmail) {
 		log.info("checkEmail : " + memberEmail);
 		String result = "";

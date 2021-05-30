@@ -143,7 +143,7 @@ a {
 								 -->
 								<div class="field">
 									<h3 class="inputName">우편번호</h3>
-									<input name="memberZipcode" class="postcodify_postcode5" type="text" placeholder="우편번호" />
+									<input name="memberZipcode" class="postcodify_postcode5" type="text" placeholder="검색버튼을 눌러주세요" />
 									<button id="postcodify_search_button">검색</button>
 								</div>
 								<div class="field">

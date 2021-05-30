@@ -13,5 +13,7 @@ public interface MemberMapper {
 	public int checkEmail (String memberEmail);
 	
 	public int login (@Param("memberId") String memberId, @Param ("memberPw") String memberPw);
+	
+	public int findId (MemberVO member);
 
 }

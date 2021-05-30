@@ -6,10 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.joshua.domain.MemberVO;
@@ -52,7 +50,8 @@ public class MemberController {
 	
 	@PostMapping("/login")
 	public String login(String memberId, String memberPw, RedirectAttributes rttr) {
-		memberPw = decrypt(memberPw);
+		
+		memberPw = encrypt(memberPw);
 		String result = "";
 		//로그인 성공
 		if (service.login(memberId, memberPw) > 0 ) {

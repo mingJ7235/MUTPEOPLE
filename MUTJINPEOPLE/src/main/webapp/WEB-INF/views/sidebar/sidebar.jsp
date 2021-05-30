@@ -53,7 +53,7 @@
 					<li><a href="/board/list">멋진 수다쟁이들</a></li>
 				</ul>
 				<ul class="actions stacked">
-					<li><a href="" class="button fit primary">회원가입</a></li>
+					<li><a href="/member/join" class="button fit primary">회원가입</a></li>
 					<li><a href="/member/login" class="button fit">로그인</a></li>
 				</ul>
 			</nav>

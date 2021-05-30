@@ -69,7 +69,7 @@ a {
 		<c:import url="../header/header.jsp" />
 
 	</div>
-	<c:import url="../sidebar/sidebar.jsp" />
+		<c:import url="../sidebar/sidebar.jsp" />	
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -143,15 +143,16 @@ a {
 								 -->
 								<div class="field">
 									<h3 class="inputName">우편번호</h3>
-									<input name="memberZipcode" type="text" placeholder="우편번호" />
+									<input name="memberZipcode" class="postcodify_postcode5" type="text" placeholder="우편번호" />
+									<button id="postcodify_search_button">검색</button>
 								</div>
 								<div class="field">
 									<h3 class="inputName">주소</h3>
-									<input name="memberLocation" type="text" placeholder="주소" />
+									<input name="memberLocation" class="postcodify_address" type="text" placeholder="주소" />
 								</div>
 								<div class="field">
 									<h3 class="inputName">상세주소</h3>
-									<input name="memberLocationDetail" type="text" placeholder="상세주소" />
+									<input name="memberLocationDetail" class="postcodify_details" type="text" placeholder="상세주소" />
 								</div>
 								<div class="field">
 									<h3>Sharing Talent For you</h3>
@@ -195,9 +196,10 @@ a {
 							</div>
 
 							<ul class="actions special">
-								<li><input type="submit" class="button" value="등록">
+								<li><input type="submit" class="button joinBtn" value="멋진사람되기">
 								</li>
 							</ul>
+							
 						</form>
 					</div>
 				</div>
@@ -265,10 +267,18 @@ a {
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 	
-	<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
-	<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 
 </body>
+<script> 
+	$("#postcodify_search_button").on("click", function(e){
+		e.preventDefault();
+		$(this).postcodifyPopUp();
+		
+	})
+
+</script>
+
+
 <script>
 var arrFlag = [];
 arrFlag[0] = false;

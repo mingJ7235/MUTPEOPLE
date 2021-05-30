@@ -17,11 +17,11 @@
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="/resources/assets/css/main.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 
 <style>
 body {
-	font-family: 'Nanum Brush Script', cursive !important;
+	font-family: 'Poor Story', cursive !important;
 }
 
 a {
@@ -38,6 +38,12 @@ a {
 	font-size: 1.1rem;
 	margin-bottom: 0; 
 		
+}
+
+.inputName {
+	text-align: left; 
+	
+	
 }
 
 </style>
@@ -91,42 +97,42 @@ a {
 						<form id="joinForm" method="post" action="/member/join">
 							<div class="fields" style = "margin : 0 auto;">
 								<div class="field">
-									<h3>아이디</h3>
+									<h3 class="inputName">아이디</h3>
 									<input id = "memberId" name="memberId" type="text" placeholder="아이디" />
 									<p id="idText" class="checkText"></p>
 								</div>
 								<div class="field">
-									<h3>비밀번호</h3>
+									<h3 class="inputName">비밀번호</h3>
 									<input id = "memberPw" name="memberPw" type="password" placeholder="비밀번호" />
 								</div>
 								<div class="field">
-									<h3>비밀번호 확인</h3>
+									<h3 class="inputName">비밀번호 확인</h3>
 									<input id="memberPwCheck" name="memberPwCheck" type="password" placeholder="비밀번호확인"/>
 									<p id="pwText" class="checkText"></p>
 								</div>
 								<div class="field">
-									<h3>이름</h3>
+									<h3 class="inputName">이름</h3>
 									<input id="memberName" name="memberName" type="text" placeholder="이름" />
 								</div>
 								<div class="field">
-									<h3>나이</h3>
+									<h3 class="inputName">나이</h3>
 									<input id="memberAge" name="memberAge" type="text" placeholder="나이" />
 								</div>
 								<div class="field">
-									<h3>이메일</h3>
-									<input id="memberEmail" name="memberEmail" type="text" placeholder="writer" />
+									<h3 class="inputName">이메일</h3>
+									<input id="memberEmail" name="memberEmail" type="text" placeholder="이메일주소 (ex> abc@def.com)" />
 									<p id="emailText" class="checkText"></p>
 								</div>
 								<div class="field">
-									<h3>우편번호</h3>
+									<h3 class="inputName">우편번호</h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
-									<h3>주소</h3>
+									<h3 >주소</h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
-									<h3>상세주소</h3>
+									<h3 class="inputName">상세주소</h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
@@ -140,40 +146,32 @@ a {
 								</div>
 								
 								<div class="field">
-									<h3> 재능 #1 </h3>
+									<h3 class="inputName"> 재능 #1 </h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
-									<h3> 재능 #2 </h3>
+									<h3 class="inputName"> 재능 #2 </h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
-									<h3> 재능 #3 </h3>
+									<h3 class="inputName"> 재능 #3 </h3>
 									<input name="writer" type="text" placeholder="writer" />
 								</div>
 								<br>
 																
 								<br>
-								<h5 style ="width: 400px;">관심 분야 (<span style ="color:red;">*</span> 최소 1개는 선택해주세요.)</h5>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px;">
-										<option value="">- 카테고리 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
+								<div class="field">
+									<h3 class="inputName"> 관심분야 #1 </h3>
+									<input name="writer" type="text" placeholder="writer" />
 								</div>
-								<div class="col-12">
-									<select name="category" id="category" style ="width : 400px; margin-top: 10px;">
-										<option value="">- 세부분야 -</option>
-										<option value="1">운동</option>
-										<option value="1">게임</option>
-										<option value="1">음악</option>
-										<option value="1">자기개발</option>
-									</select>
+								<div class="field">
+									<h3 class="inputName"> 관심분야 #2 </h3>
+									<input name="writer" type="text" placeholder="writer" />
 								</div>
-								<br>
+								<div class="field">
+									<h3 class="inputName"> 관심분야 #3 </h3>
+									<input name="writer" type="text" placeholder="writer" />
+								</div>
 								
 							
 							</div>

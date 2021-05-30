@@ -132,6 +132,15 @@ a {
 									<input id="memberEmail" name="memberEmail" type="text" placeholder="이메일주소 (ex> abc@def.com)" />
 									<p id="emailText" class="checkText"></p>
 								</div>
+								
+								<!-- 
+								<input type="text" name="" class="postcodify_postcode5" value="" />
+								<button id="postcodify_search_button">검색</button><br />
+								<input type="text" name="" class="postcodify_address" value="" /><br />
+								<input type="text" name="" class="postcodify_details" value="" /><br />
+								<input type="text" name="" class="postcodify_extra_info" value="" /><br />
+								
+								 -->
 								<div class="field">
 									<h3 class="inputName">우편번호</h3>
 									<input name="memberZipcode" type="text" placeholder="우편번호" />
@@ -253,6 +262,11 @@ a {
 	<script src="/resources/assets/js/breakpoints.min.js"></script>
 	<script src="/resources/assets/js/util.js"></script>
 	<script src="/resources/assets/js/main.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	
+	<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+	<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 
 </body>
 <script>

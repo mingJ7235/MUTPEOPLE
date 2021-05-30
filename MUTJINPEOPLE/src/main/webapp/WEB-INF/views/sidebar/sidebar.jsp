@@ -50,7 +50,7 @@
 					<li><a href="/member/home">메인페이지</a></li>
 					<li><a href="generic.html">지역별 멋쟁이들</a></li>
 					<li><a href="generic.html">이런 멋쟁이 있나요?</a></li>
-					<li><a href="generic.html">멋진 수다쟁이들</a></li>
+					<li><a href="/board/list">멋진 수다쟁이들</a></li>
 				</ul>
 				<ul class="actions stacked">
 					<li><a href="" class="button fit primary">회원가입</a></li>

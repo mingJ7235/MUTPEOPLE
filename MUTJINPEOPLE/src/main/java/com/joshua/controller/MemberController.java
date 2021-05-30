@@ -1,12 +1,15 @@
 package com.joshua.controller;
 
+
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.joshua.domain.MemberVO;
@@ -96,6 +99,23 @@ public class MemberController {
 		log.info(memberId);
 		return service.checkId(memberId) == 0 ? new ResponseEntity<String> ("1", HttpStatus.OK) : new ResponseEntity<String> ("0", HttpStatus.OK);
 		
+	}
+	
+	@GetMapping (value ="/checkEmail", produces = {MediaType.TEXT_PLAIN_VALUE})
+	public ResponseEntity<String> checkEmail (String memberEmail) {
+		log.info("checkEmail : " + memberEmail);
+		String result = "";
+		
+		//이메일이 중복되지 않는 경우 
+		if (service.checkEmail(memberEmail) == 0) {
+			result = "1";
+		}else {
+			result = "0";
+		}
+		
+		return result != "" ? new ResponseEntity<String> (result, HttpStatus.OK) : new ResponseEntity<String> (HttpStatus.INTERNAL_SERVER_ERROR);
+		//return service.checkEmail(memberEmail) == 0 ? new ResponseEntity<String> ("1", HttpStatus.OK) : new
+ 		
 	}
 	
 //	@PostMapping("/findId")

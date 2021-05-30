@@ -97,15 +97,16 @@ a {
 								</div>
 								<div class="field">
 									<h3>이름</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input id="memberName" name="memberName" type="text" placeholder="이름" />
 								</div>
 								<div class="field">
 									<h3>나이</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input id="memberAge" name="memberAge" type="text" placeholder="나이" />
 								</div>
 								<div class="field">
 									<h3>이메일</h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input id="memberEmail" name="memberEmail" type="text" placeholder="writer" />
+									<p id="emailText"></p>
 								</div>
 								<div class="field">
 									<h3>우편번호</h3>
@@ -242,6 +243,7 @@ a {
 var arrFlag = [];
 arrFlag[0] = false;
 
+//아이디 중복 체크
 $("#memberId").blur(function() {
 	
 	let inputId = $("#memberId").val();
@@ -285,6 +287,7 @@ $("#memberId").blur(function() {
 	});		
 });
 
+//비밀번호 확인과 일치하는지 체크
 $("#memberPwCheck").blur(function (){
 	var pw = $("#memberPw").val();
 	var pwCheck = $(this).val();
@@ -294,14 +297,67 @@ $("#memberPwCheck").blur(function (){
 		console.log("ok");
 		text.css("color", "#3cb371");
 		text.text("비밀번호가 일치합니다");
-		arrFlag[2] = true;
+		arrFlag[1] = true;
 	}else{
 		console.log("not");
 		text.css("color", "#ff6347");
 		text.text("비밀번호가 다릅니다");
-		arrFlag[2] = false;
+		arrFlag[1] = false;
 	}
 });
+
+//비밀번호 정규식 체크
+$("#memberPw").blur(function() {
+	
+})
+
+//이메일 정규식 체크 및 중복 체크
+$("#memberEmail").blur(function(){
+	let regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+	inputEmail = $("#memberEmail").val();
+	text = $("#emailText");
+	
+	console.log(inputEmail);
+	if(!regExp.test(inputEmail)) {
+		text.css("color", "#ff6347");
+		text.text("이메일 형식에 맞게 입력해주세요");
+		arrFlag[2] = false;
+		return false;
+	}	
+	
+	$.ajax ({
+		url : "/member/checkEmail",
+		type : "get",
+		data : {memberEmail : inputEmail},
+		success : function(result) {
+			if ($.trim(result) == 1) {
+				text.css("color", "#3cb371");
+				text.text ("사용가능한 이메일 입니다. ");
+				arrFlag[2] = true;
+			} else {
+				text.css("color", "ff6347");
+				text.text("사용중인 이메일입니다. ");
+				arrFlag[2] = false;
+			}
+		},
+		error : function (xhr, status, err) {
+			console.log(xhr + status + err)
+		}
+	})
+	
+	
+	
+})
+
+function formOk() {	
+	for(let i=0;i<6;i++){		
+		if(arrFlag[i] == false){
+			alert("입력 양식이 틀렸습니다. 확인해주세요");
+			return false;
+		}		
+	}
+	$("#join").submit();
+}
 	
 
 	

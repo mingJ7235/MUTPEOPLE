@@ -10,6 +10,8 @@ public interface MemberMapper {
 	
 	public int checkId (String memberId);
 	
+	public int checkEmail (String memberEmail);
+	
 	public int login (@Param("memberId") String memberId, @Param ("memberPw") String memberPw);
 
 }

@@ -32,6 +32,10 @@
 		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId}
 	</select>
 	
+	<select id="checkEmail" resultType="_int">
+		SELECT COUNT(MEMBEREMAIL) FROM TBL_LIGHTMEMBER WHERE MEMBEREMAIL = #{memberEmail}	
+	</select>
+	
 	<!-- 로그인 -->
 	<select id="login" resultType="_int">
 		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}

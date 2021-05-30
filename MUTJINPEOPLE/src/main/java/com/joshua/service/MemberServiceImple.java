@@ -26,11 +26,17 @@ public class MemberServiceImple implements MemberService{
 		log.info("checkID for join --- ");
 		return mapper.checkId(memberId);
 	}
+	@Override
+	public int checkEmail(String memberEmail) {
+		log.info("checkEmail-----");
+		return mapper.checkEmail(memberEmail);
+	}
 	
 	@Override
 	public int login(String memberId, String memberPw) {
 		log.info("login ----");
 		return mapper.login(memberId, memberPw);
 	}
+
 	
 }

@@ -8,6 +8,8 @@ public interface MemberService {
 	
 	public int checkId (String memberId);
 	
+	public int checkEmail (String memberEmail);
+	
 	public int login (String memberId, String memberPw);
 
 }

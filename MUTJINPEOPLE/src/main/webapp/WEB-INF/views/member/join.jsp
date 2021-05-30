@@ -134,15 +134,15 @@ a {
 								</div>
 								<div class="field">
 									<h3 class="inputName">우편번호</h3>
-									<input name="writer" type="text" placeholder="우편번호" />
+									<input name="memberZipcode" type="text" placeholder="우편번호" />
 								</div>
 								<div class="field">
 									<h3 class="inputName">주소</h3>
-									<input name="writer" type="text" placeholder="주소" />
+									<input name="memberLocation" type="text" placeholder="주소" />
 								</div>
 								<div class="field">
 									<h3 class="inputName">상세주소</h3>
-									<input name="writer" type="text" placeholder="상세주소" />
+									<input name="memberLocationDetail" type="text" placeholder="상세주소" />
 								</div>
 								<div class="field">
 									<h3>Sharing Talent For you</h3>
@@ -156,30 +156,30 @@ a {
 								
 								<div class="field">
 									<h3 class="inputName"> 재능 #1 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberCanOne" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
 									<h3 class="inputName"> 재능 #2 </h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberCanTwo" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
 									<h3 class="inputName"> 재능 #3 </h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberCanThree" type="text" placeholder="writer" />
 								</div>
 								<br>
 																
 								<br>
 								<div class="field">
 									<h3 class="inputName"> 관심분야 #1 <span class="inputNameSpan">(<span class="fontColorRed">*</span>)</span></h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberWantOne" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
 									<h3 class="inputName"> 관심분야 #2 </h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberWantTwo" type="text" placeholder="writer" />
 								</div>
 								<div class="field">
 									<h3 class="inputName"> 관심분야 #3 </h3>
-									<input name="writer" type="text" placeholder="writer" />
+									<input name="memberWantThree" type="text" placeholder="writer" />
 								</div>
 								
 							

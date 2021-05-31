@@ -13,4 +13,5 @@ public interface MemberService {
 	public int login (String memberId, String memberPw);
 	
 	public String findId (String memberName, String memberEmail);
+	
 }

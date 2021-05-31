@@ -103,17 +103,18 @@ public class MemberController {
 		log.info("memberEmail : " + memberEmail);
 
 		String result = "";
+		String memberId = service.findId(memberName, memberEmail);
 		
 		//이름과 이메일 주소가 DB에 있을 때, 
-		if(service.findId(memberName, memberEmail) != "") {
-			String memberId = service.findId(memberName, memberEmail);
+		if(memberId != "") {
+			memberId = service.findId(memberName, memberEmail);
 			rttr.addFlashAttribute("memberId", memberId);
 			result = "redirect:/member/findIdResult";
 		}else {
 			//일치하지 않을 때 
+			memberId = service.findId(memberName, memberEmail);
 			result = "redirect:/member/findId";
 		}
-		
 		return result;
 		
 	}
@@ -122,7 +123,6 @@ public class MemberController {
 	public void findIdResult () {
 		
 	}
-	
 	
 	
 	@GetMapping (value = "/checkId", produces = "text/plain; charset=utf-8")

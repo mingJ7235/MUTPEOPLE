@@ -40,8 +40,17 @@ public class MemberServiceImple implements MemberService{
 
 	@Override
 	public String findId(String memberName, String memberEmail) {
-		return mapper.findId(memberName, memberEmail);
+		String result = "";
+		if (mapper.findIdCheck(memberName, memberEmail) == 1) {
+			result = mapper.findId(memberName, memberEmail);
+		} else {
+			
+		}
+		
+		return result;
 	}
+	
+	
 
 	
 

@@ -65,7 +65,7 @@
                               			<div class="fields">
                               				<div class="field">
                               					
-                              					<span id="idSpan">${memberId}</span>
+                              					<span id="idSpan">${map.memberName} 님의 아이디 : ${map.memberId}</span>
                               					
                               				</div>
                               			</div>

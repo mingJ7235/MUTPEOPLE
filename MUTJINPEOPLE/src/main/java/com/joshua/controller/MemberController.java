@@ -1,6 +1,9 @@
 package com.joshua.controller;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -107,8 +110,12 @@ public class MemberController {
 		
 		//이름과 이메일 주소가 DB에 있을 때, 
 		if(memberId != "") {
+			Map<String, String> map = new HashMap();
+			map.put("memberId", memberId);
+			map.put("memberName", memberName);
+			
 			memberId = service.findId(memberName, memberEmail);
-			rttr.addFlashAttribute("memberId", memberId);
+			rttr.addFlashAttribute("map", map);
 			result = "redirect:/member/findIdResult";
 		}else {
 			//일치하지 않을 때 

@@ -27,8 +27,13 @@
 		}
 		
 		.idSpan {
-		
+			font-size: 1.5em;
 		}
+		.spanBold {
+			font-weight: bold;
+			font-size: 1.7em;
+		}
+		
 		
 			
 		</style>
@@ -64,15 +69,17 @@
                               	<div class="form">
                               			<div class="fields">
                               				<div class="field">
-                              					
-                              					<span id="idSpan">${map.memberName} 님의 아이디 : ${map.memberId}</span>
-                              					
+                              					<div class="infoBox">
+	                              					<span class="idSpan spanBold">${map.memberName}</span>
+	                              					<span class="idSpan"> 님의 아이디 : </span>
+	                              					<span class="idSpan spanBold">${map.memberId}</span>
+                              					</div>
                               				</div>
                               			</div>
                               			
                               			<ul class="actions special">
                               				<li>
-                              					<a href="/member/login" type="button"> 로그인 </a>
+                              					<a href="/member/login" type="button" class="button"> 로그인 </a>
                               				</li>
                               			</ul>
                               	</div>

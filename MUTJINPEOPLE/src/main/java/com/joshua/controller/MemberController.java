@@ -20,6 +20,7 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
+//@RequestMapping()
 @RequestMapping("/member/*")
 @AllArgsConstructor
 public class MemberController {
@@ -31,7 +32,7 @@ public class MemberController {
 	public void home () {
 		
 	}
-	
+	//@GetMapping("/member/join")
 	@GetMapping("/join")
 	public void join () {
 		

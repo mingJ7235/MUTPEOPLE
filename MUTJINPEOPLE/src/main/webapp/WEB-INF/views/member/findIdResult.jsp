@@ -26,6 +26,10 @@
 		
 		}
 		
+		.idSpan {
+		
+		}
+		
 			
 		</style>
 		
@@ -53,28 +57,24 @@
 
                   <!-- Elements -->
                      <header class="major">
-                        <h1>아이디를 찾았습니다 ! 아이디 : ${memberId}</h1>
+                        <h1>아이디를 찾았습니다 ! </h1>
                         <p>로그인 하러 가볼까요? </p>
                     	 </header>
                               <div class="content">
                               	<div class="form">
-                              		<form id="findId" method="post" action="/member/findId">
                               			<div class="fields">
                               				<div class="field">
                               					
-                              					<input name="memberName" type="text" >
-                              					<input name="memberEmail" type="text">
-                              					
+                              					<span id="idSpan">${memberId}</span>
                               					
                               				</div>
                               			</div>
                               			
                               			<ul class="actions special">
                               				<li>
-                              					<input type="submit" value="입력하세요">
+                              					<a href="/member/login" type="button"> 로그인 </a>
                               				</li>
                               			</ul>
-                              		</form>
                               	</div>
                               </div>
                         </div>

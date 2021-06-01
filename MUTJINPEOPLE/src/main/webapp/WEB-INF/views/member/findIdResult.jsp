@@ -80,6 +80,7 @@
                               			<ul class="actions special">
                               				<li>
                               					<a href="/member/login" type="button" class="button"> 로그인 </a>
+                              					<a href="/member/findPw" type="button" class="button"> 비밀번호 찾기 </a>
                               				</li>
                               			</ul>
                               	</div>

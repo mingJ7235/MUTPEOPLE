@@ -125,13 +125,20 @@ public class MemberController {
 		return result;
 		
 	}
-	
+	//찾아진 아이디 나오는 페이지
 	@GetMapping (value="/findIdResult") 
 	public void findIdResult () {
 		
 	}
 	
+	//비밀번호 변경 페이지 이동
+	@GetMapping (value="/findPw")
+	public void findPw () {
+		
+	}
 	
+	
+	//ajax통신 -> 아이디 중복 체크
 	@GetMapping (value = "/checkId", produces = "text/plain; charset=utf-8")
 	@ResponseBody
 	public ResponseEntity<String> checkId (String memberId) {
@@ -140,6 +147,7 @@ public class MemberController {
 		
 	}
 	
+	//ajax통신 -> 이메일 중복 체크
 	@GetMapping (value ="/checkEmail", produces = {MediaType.TEXT_PLAIN_VALUE})
 	@ResponseBody
 	public ResponseEntity<String> checkEmail (String memberEmail) {

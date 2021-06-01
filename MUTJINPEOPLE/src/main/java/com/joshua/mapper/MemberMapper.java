@@ -17,4 +17,6 @@ public interface MemberMapper {
 	public String findId (@Param("memberName") String memberName, @Param("memberEmail") String memberEmail);
 	
 	public int findIdCheck (@Param("memberName") String memberName, @Param("memberEmail") String memberEmail);
+	
+	public int findPwCheck (@Param("memberId") String memberId, @Param("memberEmail") String memberEmail); 
 }

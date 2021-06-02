@@ -61,11 +61,11 @@ public class MemberServiceImple implements MemberService{
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.gmail.com"; //네이버 이용시 smtp.naver.com
 		String hostSMTPid = "mutpeople@gmail.com";
-		String hostSMTPpwd = "mut1234";
+		String hostSMTPpwd = "mut1234@";
 
 		// 보내는 사람 EMail, 제목, 내용
 		String fromEmail = "mutpeople@gmail.com";
-		String fromName = "mutpeople";
+		String fromName = "멋진사람들";
 		String subject = "";
 		String msg = "";
 

@@ -52,8 +52,12 @@
 		SELECT COUNT(MEMBERPW) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId} AND MEMBEREMAIL = #{memberEmail}
 	</select>
 	
+	<update id="updatePw" >
+		UPDATE TBL_LIGHTMEMBER SET MEMBERPW = #{memberPw} WHERE MEMBERID = #{memberId}
+	</update>
+	
 	<!-- id로 전체 member 객체의 정보 불러오기 -->
-	<select id="readMember" resultType ="MemberVO">
+	<select id="readMember" resultType ="com.joshua.domain.MemberVO">
 		SELECT * FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId}
 	</select>
 	

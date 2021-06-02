@@ -104,10 +104,10 @@ public class MemberServiceImple implements MemberService{
 	@Override
 	public void findPw(HttpServletResponse response, MemberVO vo) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
-		MemberVO ck = mdao.readMember(vo.getMemberId());
+		MemberVO ck = mapper.readMember(vo.getMemberId());
 		PrintWriter out = response.getWriter();
 		// 가입된 아이디가 없으면
-		if(mdao.idCheck(vo.getId()) == null) {
+		if(mapper.checkId(vo.getMemberId()) == 0) {
 			out.print("등록되지 않은 아이디입니다.");
 			out.close();
 		}
@@ -121,9 +121,9 @@ public class MemberServiceImple implements MemberService{
 			for (int i = 0; i < 12; i++) {
 				pw += (char) ((Math.random() * 26) + 97);
 			}
-			vo.setPw(pw);
+			vo.setMemberPw(pw);
 			// 비밀번호 변경
-			mdao.updatePw(vo);
+			mapper.updatePw(vo);
 			// 비밀번호 변경 메일 발송
 			sendEmail(vo, "findpw");
 

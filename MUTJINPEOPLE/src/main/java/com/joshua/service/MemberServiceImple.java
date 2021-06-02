@@ -59,9 +59,9 @@ public class MemberServiceImple implements MemberService{
 	public void sendEmail(MemberVO vo, String div) throws Exception {
 		// Mail Server 설정
 		String charSet = "utf-8";
-		String hostSMTP = "smtp.gmail.com"; //네이버 이용시 smtp.naver.com
-		String hostSMTPid = "mutpeople@gmail.com";
-		String hostSMTPpwd = "mut1234@";
+		String hostSMTP = "smtp.naver.com"; //네이버 이용시 smtp.naver.com
+		String hostSMTPid = "3mins1@naver.com";
+		String hostSMTPpwd = "";
 
 		// 보내는 사람 EMail, 제목, 내용
 		String fromEmail = "mutpeople@gmail.com";
@@ -70,7 +70,7 @@ public class MemberServiceImple implements MemberService{
 		String msg = "";
 
 		if(div.equals("findpw")) {
-			subject = "베프마켓 임시 비밀번호 입니다.";
+			subject = "멋진사람들 임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
 			msg += vo.getMemberId() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
@@ -86,7 +86,7 @@ public class MemberServiceImple implements MemberService{
 			email.setCharset(charSet);
 			email.setSSL(true);
 			email.setHostName(hostSMTP);
-			email.setSmtpPort(465); //네이버 이용시 587
+			email.setSmtpPort(587); //네이버 이용시 587
 
 			email.setAuthentication(hostSMTPid, hostSMTPpwd);
 			email.setTLS(true);

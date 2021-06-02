@@ -1,5 +1,7 @@
 package com.joshua.service;
 
+import javax.servlet.http.HttpServletResponse;
+
 import com.joshua.domain.MemberVO;
 
 public interface MemberService {
@@ -13,5 +15,11 @@ public interface MemberService {
 	public int login (String memberId, String memberPw);
 	
 	public String findId (String memberName, String memberEmail);
+	
+	//이메일발송
+	public void sendEmail(MemberVO vo, String div) throws Exception;
+
+	//비밀번호찾기
+	public void findPw(HttpServletResponse resp, MemberVO vo) throws Exception;
 	
 }

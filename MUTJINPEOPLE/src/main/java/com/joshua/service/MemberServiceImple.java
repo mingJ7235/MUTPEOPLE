@@ -60,12 +60,12 @@ public class MemberServiceImple implements MemberService{
 		// Mail Server 설정
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.gmail.com"; //네이버 이용시 smtp.naver.com
-		String hostSMTPid = "서버 이메일 주소(보내는 사람 이메일 주소)";
-		String hostSMTPpwd = "서버 이메일 비번(보내는 사람 이메일 비번)";
+		String hostSMTPid = "mutpeople@gmail.com";
+		String hostSMTPpwd = "mut1234";
 
 		// 보내는 사람 EMail, 제목, 내용
-		String fromEmail = "보내는 사람 이메일주소(받는 사람 이메일에 표시됨)";
-		String fromName = "프로젝트이름 또는 보내는 사람 이름";
+		String fromEmail = "mutpeople@gmail.com";
+		String fromName = "mutpeople";
 		String subject = "";
 		String msg = "";
 
@@ -103,19 +103,23 @@ public class MemberServiceImple implements MemberService{
 
 	@Override
 	public void findPw(HttpServletResponse response, MemberVO vo) throws Exception {
+		log.info("들어옴1");
 		response.setContentType("text/html;charset=utf-8");
 		MemberVO ck = mapper.readMember(vo.getMemberId());
 		PrintWriter out = response.getWriter();
 		// 가입된 아이디가 없으면
 		if(mapper.checkId(vo.getMemberId()) == 0) {
+			log.info("들어옴2");
 			out.print("등록되지 않은 아이디입니다.");
 			out.close();
 		}
 		// 가입된 이메일이 아니면
 		else if(!vo.getMemberEmail().equals(ck.getMemberEmail())) {
+			log.info("들어옴3");
 			out.print("등록되지 않은 이메일입니다.");
 			out.close();
 		}else {
+			log.info("들어옴4");
 			// 임시 비밀번호 생성
 			String pw = "";
 			for (int i = 0; i < 12; i++) {

@@ -15,7 +15,6 @@
 		<meta name="description" content="" />
         <meta name="keywords" content="" />
 		<link rel="stylesheet" href="/resources/assets/css/main.css" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 .mybtn{
@@ -38,30 +37,101 @@
 </style>
 <title>비밀번호 찾기</title>
 </head>
-<body>
-	<div class="w3-content w3-container w3-margin-top">
-		<div class="w3-container w3-card-4 w3-auto" style="width: 382px;height: 456.3px;">
-			<div class="w3-center w3-large w3-margin-top">
-				<h3>비밀번호 찾기</h3>
-			</div>
-			<div>
-				<p>
-					<label>아이디</label>
-					<input class="w3-input" type="text" id="memberId" name="memberId" placeholder="회원가입한 아이디를 입력하세요" required>
-				</p>
-				<p>
-					<label>이메일</label>
-					<input class="w3-input" type="text" id="memberEmail" name="memberEmail" placeholder="회원가입한 이메일주소를 입력하세요" required>
-				</p>
-				<p class="w3-center">
-					<button type="button" id="findBtn" class="w3-button w3-hover-white w3-ripple w3-margin-top w3-round mybtn">찾기</button>
-					<button type="button" onclick="history.go(-1);" class="w3-button w3-hover-white w3-ripple w3-margin-top w3-round mybtn">로그인으로</button>
-				</p>
-			</div>
+<body class="is-preload">
+
+		<!-- Header -->
+		<div>
+			<c:import url="../header/header.jsp"/>
+		
 		</div>
-	</div>
-</body>
+			<c:import url="../sidebar/sidebar.jsp"/> 
+			
+			
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					
+
+				<!-- One -->
+					<section class="wrapper style2 special">
+						<div class="inner">
+
+                  <!-- Elements -->
+                     <header class="major">
+                        <h1>아이디 찾기</h1>
+                        <p>아이디를 분실하셨나요? 괜찮아요 도와줄게요</p>
+                    	 </header>
+                              <div class="content">
+                              	<div class="form">
+                              			<div class="fields">
+                              				<div class="field">
+                              					
+												<input type="text" id="memberId" name="memberId" placeholder="회원가입한 아이디를 입력하세요" required>
+												<input type="text" id="memberEmail" name="memberEmail" placeholder="회원가입한 이메일주소를 입력하세요" required>
+                              					
+                              				</div>
+                              			</div>
+                              			
+                              			<ul class="actions special">
+                              				<li>
+												<input type="button" id="findBtn" value="비밀번호 찾기">
+												<input type="button" onclick="history.go(-1);" value="로그인">
+                              				</li>
+                              			</ul>
+                              	</div>
+                              </div>
+                        </div>
+					</section>
+				</div>
+
+				
+
+				<!-- Footer -->
+					<section id="footer" class="wrapper split style2">
+						<div class="inner">
+							<section>
+								<header>
+									<h3>Magna lorem ipsum</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos magna fames ac turpis egestas amet non lorem amet.</p>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half"><input type="text" name="name" id="name" placeholder="Name" /></div>
+										<div class="field half"><input type="email" name="email" id="email" placeholder="Email" /></div>
+										<div class="field"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" /></li>
+									</ul>
+								</form>
+							</section>
+						</div>
+						<div class="copyright">
+							<p>&copy; Untitled. All rights reserved. Lorem ipsum dolor sit amet nullam.</p>
+						</div>
+					</section>
+
+		
+
+		<!-- Scripts -->
+			<script src="/resources/assets/js/jquery.min.js"></script>
+			<script src="/resources/assets/js/browser.min.js"></script>
+			<script src="/resources/assets/js/breakpoints.min.js"></script>
+			<script src="/resources/assets/js/util.js"></script>
+			<script src="/resources/assets/js/main.js"></script>
+
+	</body>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+			
 <script>
 	$(function(){
 		$("#findBtn").click(function(){

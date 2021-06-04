@@ -34,6 +34,11 @@
   color: #212529;
   text-decoration: none;
 }
+
+.field input {
+
+}
+
 </style>
 <title>비밀번호 찾기</title>
 </head>
@@ -59,8 +64,8 @@
 
                   <!-- Elements -->
                      <header class="major">
-                        <h1>아이디 찾기</h1>
-                        <p>아이디를 분실하셨나요? 괜찮아요 도와줄게요</p>
+                        <h1>비밀번호 찾기</h1>
+                        <p>비밀번호를 잃어버리셨나요? 괜찮아요 찾아드릴게요</p>
                     	 </header>
                               <div class="content">
                               	<div class="form">
@@ -76,7 +81,7 @@
                               			<ul class="actions special">
                               				<li>
 												<input type="button" id="findBtn" value="비밀번호 찾기">
-												<input type="button" onclick="history.go(-1);" value="로그인">
+												<a type="button" id="" class = "button" href="/member/login" >로그인</a>
                               				</li>
                               			</ul>
                               	</div>
@@ -148,6 +153,9 @@
 				success : function(result) {
 					alert(result);
 				},
+				error : function (xhr, status, err) {
+					alert(err);
+				}
 			})
 		});
 	})

@@ -67,5 +67,7 @@
 		SELECT COUNT(MEMBERID) FROM TBL_LIGHTMEMBER WHERE MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
 	</select>
 	
+	<!-- footer로 부터 오는 고객 메세지 저장 테이블  -->
+	
 	
 </mapper>

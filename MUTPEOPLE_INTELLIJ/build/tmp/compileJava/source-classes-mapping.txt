@@ -36,3 +36,7 @@ com/joshua/domain/BoardVO.java
  com.joshua.domain.BoardVO
 com/joshua/service/ReplyServiceImple.java
  com.joshua.service.ReplyServiceImple
+com/joshua/ServletInitializer.java
+ com.joshua.ServletInitializer
+com/joshua/Application.java
+ com.joshua.Application

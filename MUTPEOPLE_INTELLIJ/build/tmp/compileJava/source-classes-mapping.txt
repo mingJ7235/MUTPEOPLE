@@ -14,6 +14,8 @@ com/joshua/domain/Criteria.java
  com.joshua.domain.Criteria
 com/joshua/service/MemberService.java
  com.joshua.service.MemberService
+com/joshua/Application.java
+ com.joshua.Application
 com/joshua/service/ReplyService.java
  com.joshua.service.ReplyService
 com/joshua/service/BoardServiceImple.java
@@ -36,7 +38,3 @@ com/joshua/domain/BoardVO.java
  com.joshua.domain.BoardVO
 com/joshua/service/ReplyServiceImple.java
  com.joshua.service.ReplyServiceImple
-com/joshua/ServletInitializer.java
- com.joshua.ServletInitializer
-com/joshua/Application.java
- com.joshua.Application
